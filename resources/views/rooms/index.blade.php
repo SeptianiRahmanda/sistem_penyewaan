@@ -84,7 +84,7 @@
     <div class="header">
         <h1>Data Kamar</h1>
 
-        <a href="#" class="btn">+ Tambah Kamar</a>
+        <a href="/rooms/create" class="btn">+ Tambah Kamar</a>
     </div>
 
     <table>

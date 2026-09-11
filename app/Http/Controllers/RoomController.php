@@ -12,4 +12,9 @@ class RoomController extends Controller
 
         return view('rooms.index', compact('rooms'));
     }
+
+    public function create()
+    {
+        return view('rooms.create');
+    }
 }
