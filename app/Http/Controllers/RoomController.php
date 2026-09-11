@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Room;
 use Illuminate\Http\Request;
+
 class RoomController extends Controller
 {
     public function index()
@@ -18,8 +19,12 @@ class RoomController extends Controller
         return view('rooms.create');
     }
 
-    public function store(Request $request)
-{
+    public function edit(Room $room)
+    {
+        return view('rooms.edit', compact('room'));
+    }
+    public function update(Request $request, Room $room)
+    {
     $request->validate([
         'room_number' => 'required',
         'room_type' => 'required',
@@ -27,7 +32,7 @@ class RoomController extends Controller
         'status' => 'required',
     ]);
 
-    Room::create([
+    $room->update([
         'room_number' => $request->room_number,
         'room_type' => $request->room_type,
         'price' => $request->price,
@@ -36,5 +41,25 @@ class RoomController extends Controller
     ]);
 
     return redirect('/rooms');
-}
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'room_number' => 'required',
+            'room_type' => 'required',
+            'price' => 'required|numeric',
+            'status' => 'required',
+        ]);
+
+        Room::create([
+            'room_number' => $request->room_number,
+            'room_type' => $request->room_type,
+            'price' => $request->price,
+            'description' => $request->description,
+            'status' => $request->status,
+        ]);
+
+        return redirect('/rooms');
+    }
 }

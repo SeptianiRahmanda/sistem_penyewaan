@@ -119,8 +119,8 @@
                     </td>
 
                     <td>
-                        <a href="#">Edit</a>
-                        |
+                        <a href="/rooms/{{ $room->id }}/edit">Edit</a>
+|
                         <a href="#">Hapus</a>
                     </td>
                 </tr>
