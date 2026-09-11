@@ -75,7 +75,8 @@
 
     <h1>Tambah Kamar</h1>
 
-    <form>
+    <form action="/rooms" method="POST">
+    @csrf
 
         <div class="form-group">
             <label for="room_number">Nomor Kamar</label>
