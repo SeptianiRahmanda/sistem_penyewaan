@@ -121,7 +121,13 @@
                     <td>
                         <a href="/rooms/{{ $room->id }}/edit">Edit</a>
 |
-                        <a href="#">Hapus</a>
+                        <form action="/rooms/{{ $room->id }}" method="POST" style="display: inline;">
+                        @csrf
+                        @method('DELETE')
+                            <button type="submit" onclick="return confirm('Yakin ingin menghapus kamar ini?')">
+                                Hapus
+                            </button>
+                        </form>
                     </td>
                 </tr>
 

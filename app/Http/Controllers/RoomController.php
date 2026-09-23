@@ -42,7 +42,12 @@ class RoomController extends Controller
 
     return redirect('/rooms');
     }
+    public function destroy(Room $room)
+    {
+    $room->delete();
 
+    return redirect('/rooms');
+    }
     public function store(Request $request)
     {
         $request->validate([
