@@ -5,6 +5,8 @@ use App\Http\Controllers\RoomController;
 use App\Http\Controllers\GuestController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -43,5 +45,13 @@ Route::post('/bookings', [BookingController::class, 'store']);
 Route::put('/bookings/{id}/checkout', [BookingController::class, 'checkout']);
 
 Route::get('/payments', [PaymentController::class, 'index']);
+
 Route::get('/payments/create', [PaymentController::class, 'create']);
+
 Route::post('/payments', [PaymentController::class, 'store']);
+
+Route::get('/reports/bookings', [ReportController::class, 'bookings']);
+
+Route::get('/reports/payments', [ReportController::class, 'payments']);
+
+Route::get('/dashboard', [DashboardController::class, 'index']);
