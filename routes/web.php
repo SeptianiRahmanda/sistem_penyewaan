@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\GuestController;
+use App\Http\Controllers\BookingController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,3 +32,12 @@ Route::get('/guests/{id}/edit', [GuestController::class, 'edit']);
 Route::put('/guests/{id}', [GuestController::class, 'update']);
 
 Route::delete('/guests/{id}', [GuestController::class, 'destroy']);
+
+Route::get('/bookings', [BookingController::class, 'index']);
+
+Route::get('/bookings/create', [BookingController::class, 'create']);
+
+Route::post('/bookings', [BookingController::class, 'store']);
+
+Route::put('/bookings/{id}/checkout', [BookingController::class, 'checkout']);
+
