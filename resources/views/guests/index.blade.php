@@ -76,7 +76,9 @@
                 <th>No. Identitas</th>
                 <th>No. HP</th>
                 <th>Alamat</th>
+                <th>Sumber Informasi</th>
                 <th>Aksi</th>
+                
             </tr>
         </thead>
 
@@ -94,7 +96,7 @@
                     <td>{{ $guest->phone ?? '-' }}</td>
 
                     <td>{{ $guest->address ?? '-' }}</td>
-
+                    <td>{{ $guest->information_source }}</td>
                     <td>
                         <a href="/guests/{{ $guest->id }}/edit">Edit</a>
                         |

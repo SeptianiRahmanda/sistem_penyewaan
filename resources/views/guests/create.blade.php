@@ -79,10 +79,29 @@
         <label>Alamat</label>
         <textarea name="address" rows="4"></textarea>
 
+        <label>Sumber Informasi</label>
+<select name="information_source">
+    <option value="">-- Pilih Sumber Informasi --</option>
+    <option value="Instagram">Instagram</option>
+    <option value="Facebook">Facebook</option>
+    <option value="TikTok">TikTok</option>
+    <option value="Google">Google</option>
+    <option value="WhatsApp">WhatsApp</option>
+    <option value="Travel Agent">Travel Agent</option>
+    <option value="Booking.com">Booking.com</option>
+    <option value="Agoda">Agoda</option>
+    <option value="Rekomendasi Teman/Keluarga">Rekomendasi Teman/Keluarga</option>
+    <option value="Walk-in">Walk-in</option>
+    <option value="Lainnya">Lainnya</option>
+</select>
+
+<br><br>
+
         <button type="submit" class="btn">Simpan</button>
 
         <a href="/guests" class="back">Kembali</a>
 
+        
     </form>
 
 </div>

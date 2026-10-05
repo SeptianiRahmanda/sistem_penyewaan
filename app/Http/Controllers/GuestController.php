@@ -26,6 +26,7 @@ class GuestController extends Controller
             'identity_number' => 'nullable',
             'phone' => 'nullable',
             'address' => 'nullable',
+            'information_source' => 'nullable',
         ]);
 
         Guest::create([
@@ -33,6 +34,7 @@ class GuestController extends Controller
             'identity_number' => $request->identity_number,
             'phone' => $request->phone,
             'address' => $request->address,
+            'information_source' => $request->information_source,
         ]);
 
         return redirect('/guests');
@@ -46,25 +48,27 @@ class GuestController extends Controller
     }
 
     public function update(Request $request, $id)
-    {
-        $request->validate([
-            'name' => 'required',
-            'identity_number' => 'nullable',
-            'phone' => 'nullable',
-            'address' => 'nullable',
-        ]);
+{
+    $request->validate([
+        'name' => 'required',
+        'identity_number' => 'nullable',
+        'phone' => 'nullable',
+        'address' => 'nullable',
+        'information_source' => 'nullable',
+    ]);
 
-        $guest = Guest::findOrFail($id);
+    $guest = Guest::findOrFail($id);
 
-        $guest->update([
-            'name' => $request->name,
-            'identity_number' => $request->identity_number,
-            'phone' => $request->phone,
-            'address' => $request->address,
-        ]);
+    $guest->update([
+        'name' => $request->name,
+        'identity_number' => $request->identity_number,
+        'phone' => $request->phone,
+        'address' => $request->address,
+        'information_source' => $request->information_source,
+    ]);
 
-        return redirect('/guests');
-    }
+    return redirect('/guests');
+}
     public function destroy($id)
 {
     $guest = Guest::findOrFail($id);
